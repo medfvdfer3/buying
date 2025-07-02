@@ -1,0 +1,88 @@
+import { ShoppingCart } from "lucide-react";
+import { Star } from "lucide-react";
+
+// بيانات المنتجات للتجريب
+const products = [
+    { 
+        id: 1, 
+        image: "/images/razer.jpg", 
+        title: "Razer Gold 50USD", 
+        price: 39, 
+        oldPrice: 50, 
+        rating: 4.9 
+    },
+    { 
+        id: 2, 
+        image: "/images/playstation.jpg", 
+        title: "Razer Gold 50USD", 
+        price: 39, 
+        oldPrice: 50, 
+        rating: 4.9 
+    },
+    { 
+        id: 3, 
+        image: "/images/noon.jpg", 
+        title: "Yalla Ludo 100$", 
+        price: 39, 
+        oldPrice: 50, 
+        rating: 4.9 
+    },
+    { 
+        id: 4, 
+        image: "/images/ludo.jpg", 
+        title: "Razer Gold 50USD", 
+        price: 39, 
+        oldPrice: 50, 
+        rating: 4.9 
+    },
+]
+
+const HotDeals = () => {
+    return (
+        <div className='my-8 px-6 sm:px-8'>
+            {/* Title Section */}
+            <div className='flex justify-between items-center mb-6'>
+                <h2 className='text-2xl sm:text-3xl font-semibold flex items-center gap-2'>
+                    Hot Deals <span>🔥</span>
+                </h2>
+                <a 
+                    href="#" 
+                    className='text-blue-500 font-semibold'
+                >
+                    See All
+                </a>
+            </div>
+
+            {/* Deals Grid */}
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
+                {products.map((product) => (
+                    <div
+                        key={product.id}
+                        className='flex flex-col p-4 bg-gray-100 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:bg-gray-50 duration-200'
+                    >
+                        <img src={product.image} alt={product.title} className='mb-4 w-full h-40 object-contain' />
+                        <h3 className='text-lg font-semibold mb-2'>{product.title}</h3>
+                        <div className='flex items-center mb-2 space-x-2'>
+                            <span className='text-blue-500 font-semibold text-xl'>${product.price}</span>
+                            <span className='text-gray-500 line-through'>${product.oldPrice}</span>
+                        </div>
+                        <div className='flex justify-between items-center mb-4'>
+                            <div className='flex items-center space-x-1'>
+                                <Star size={18} color="#FFD700" fill="#FFD700" />
+                                <span>{product.rating}</span>
+                            </div>
+                            <button
+                                className='flex items-center space-x-1 px-3 py-1 bg-blue-500 text-gray-50 rounded-md'
+                            >
+                                <ShoppingCart size={18} />
+                                <span>Add to cart</span>
+                            </button>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    )
+}
+
+export default HotDeals;
