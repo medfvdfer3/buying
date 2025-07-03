@@ -5,7 +5,7 @@ import HotDeals from "../components/HotDeals";
 import Banner from "../components/Banner";
 import Picked from "../components/Picked";
 import Sellers from "../components/Sellers";
-import Works from "../components/works";
+import Works from "../components/Works";
 import Platform from "../components/Platform";
 import TrendyListings from "../components/TrendyListings";
 import HotAccounts from "../components/HotAccounts";
